@@ -1,19 +1,18 @@
 #include<stdio.h>
+#include <stdlib.h>
 
 int numberIs(int num);
 int digitIs(int numDigit, int num);
+int changeNum(int changedNum, int numDigit, int num);
 
 int main()
 {
-	int num = 0, numDigit = 0;
+	int num = 0, numDigit = 0, changedNum = 0;
 
 	num = numberIs(num);
 	numDigit = digitIs(numDigit,num);
+	changedNum = changeNum(changedNum,numDigit,num);
 
-
-	
-	printf("num iste%d\n", num);
-	printf("i iste%d\n", numDigit);
 
 	system("PAUSE");
 	return 0;
@@ -35,4 +34,21 @@ int digitIs(int numDigit, int num)
 		numDigit++;
 	}
 	return numDigit;
+}
+
+int changeNum(int changedNum, int numDigit, int num)
+{
+	int j = 0, digit, k;
+	int changeArray[100] = { 0 };
+	for (; numDigit < 0; numDigit--)
+	{
+		changeArray[j] = num % 10;
+		num /= 10;
+		j++;
+	}
+	for ( k = 0; k < numDigit; k++)
+	{
+		printf("%d", changeArray[k]);
+	}
+	//printf("")
 }
