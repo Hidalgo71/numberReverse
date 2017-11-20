@@ -38,17 +38,12 @@ int digitIs(int numDigit, int num)
 
 int changeNum(int changedNum, int numDigit, int num)
 {
-	int j = 0, digit, k;
-	int changeArray[100] = { 0 };
-	for (; numDigit < 0; numDigit--)
+	int j;
+	while (num > 0)
 	{
-		changeArray[j] = num % 10;
+		j = num % 10;
+		printf("%d ",j);
 		num /= 10;
-		j++;
 	}
-	for ( k = 0; k < numDigit; k++)
-	{
-		printf("%d", changeArray[k]);
-	}
-	//printf("")
+	printf("\n");
 }
